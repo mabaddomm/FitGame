@@ -16,6 +16,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.fitgame.ui.theme.FitGameTheme
 import androidx.navigation.compose.rememberNavController
+import com.example.fitgame.Screens.MainScreen
+import com.example.fitgame.Screens.Shop
+import com.example.fitgame.Screens.Stats
+import com.example.fitgame.backend.GameViewModel
+import com.example.fitgame.backend.Route
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)

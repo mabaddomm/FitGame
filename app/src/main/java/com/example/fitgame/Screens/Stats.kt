@@ -1,4 +1,4 @@
-package com.example.fitgame
+package com.example.fitgame.Screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -21,11 +21,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.fitgame.backend.GameViewModel
+import com.example.fitgame.backend.Route
 
 @Composable
 fun Stats(modifier: Modifier = Modifier,
           navController: NavController,
-          viewModel: GameViewModel) {
+          viewModel: GameViewModel
+) {
     val steps by viewModel.totalSteps.collectAsState()
     val coins by viewModel.coins.collectAsState()
     val sleep by viewModel.hoursSleep.collectAsState()

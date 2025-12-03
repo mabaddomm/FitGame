@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grass_green">#28A75E</color>
+    <color name="dirt_brown">#B37C42</color>
+    <color name="sand_color">#E1D4B1</color>
+    <color name="stone_gray">#9EA8A8</color>
 </resources>
