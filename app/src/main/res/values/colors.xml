@@ -11,4 +11,14 @@
     <color name="dirt_brown">#B37C42</color>
     <color name="sand_color">#E1D4B1</color>
     <color name="stone_gray">#9EA8A8</color>
+    <color name="calm_cyan">#ACEDED</color>
+    <color name="dark_cyan">#4CAFA5</color>
+    <color name="calm_purple">#C48FD0</color>
+    <color name="dark_purple">#BE54CE</color>
+    <color name="calm_yellow">#E4F43F</color>
+    <color name="calm_orange">#F5920B</color>
+    <color name="weird_orange">#0A9166</color>
+    <color name="dark_orange">#E56909</color>
+    <color name="dark_brown">#645C45</color>
+    <color name="calm_brown">#ACA178</color>
 </resources>

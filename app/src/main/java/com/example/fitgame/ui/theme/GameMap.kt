@@ -11,9 +11,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.fitgame.R
 
-// ----------------------------
-// DATA MODELS
-// ----------------------------
 enum class TerrainType {
     GRASS, DIRT, SAND, STONE
 }
@@ -30,12 +27,18 @@ data class GameMap(
     val tiles: List<TerrainTile>
 )
 
-// ----------------------------
-// HELPER: Make your fixed 8-row map
-// ----------------------------
+data class PlacedItem(
+    val id: Long,
+    val itemId: String,
+    val name: String,
+    val img: Int,
+    val row: Int,
+    val col: Int
+)
+
 fun createDefaultTerrainMap(): GameMap {
-    val rows = 9      // 2 grass + 2 dirt + 2 sand + 2 stone
-    val basecols = 12     // wide map; change later
+    val rows = 9
+    val basecols = 12
 
     val tiles = mutableListOf<TerrainTile>()
 
@@ -59,19 +62,16 @@ fun createDefaultTerrainMap(): GameMap {
 @Composable
 fun TerrainMap(
     gameMap: GameMap,
-    tileSize: Dp = 54.dp
+    tileSize: Dp = 54.dp,
+    placedItems: List<PlacedItem>
 ) {
     Column(modifier = Modifier.fillMaxWidth()) {
         for (r in 0 until gameMap.rows) {
-
-            // stagger offset for hex map
             val offsetX = if (r % 2 == 0) 0.dp else tileSize / 2
-
-            // background color for the row
             val rowColor = when (r) {
-                0,1,2 -> colorResource(id = R.color.grass_green) // grass placeholder
-                3,4,5 -> colorResource(id = R.color.dirt_brown) // dirt
-                else -> colorResource(id = R.color.sand_color)// sand
+                0,1,2 -> colorResource(id = R.color.grass_green)
+                3,4,5 -> colorResource(id = R.color.dirt_brown)
+                else -> colorResource(id = R.color.sand_color)
             }
 
             Row(
@@ -91,11 +91,24 @@ fun TerrainMap(
                         TerrainType.STONE -> R.drawable.plain_stone
                     }
 
-                    Image(
-                        painter = painterResource(id = res),
-                        contentDescription = tile.type.name,
-                        modifier = Modifier.size(tileSize)
-                    )
+                    Box(modifier = Modifier.size(tileSize)) {
+                        Image(
+                            painter = painterResource(id = res),
+                            contentDescription = tile.type.name,
+                            modifier = Modifier.fillMaxSize()
+                        )
+                        val placedItem = placedItems.find { it.row == tile.row && it.col == tile.col }
+
+                        if (placedItem != null) {
+                            Image(
+                                painter = painterResource(id = placedItem.img),
+                                contentDescription = placedItem.name,
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(2.dp)
+                            )
+                        }
+                    }
                 }
             }
         }

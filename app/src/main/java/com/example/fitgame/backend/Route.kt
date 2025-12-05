@@ -14,4 +14,6 @@ sealed class Route {
     @Serializable
     data object Stats
 
+    @Serializable
+    data object HomeScreen
 }
