@@ -52,7 +52,7 @@ fun Shop(modifier: Modifier = Modifier, navController: NavController, viewModel:
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Button(onClick = { navController.navigate(Route.MainScreen) }) { Text("Village") }
-            Button(onClick = { navController.navigate(Route.Shop) }) { Text("Shop") }
+            Button(onClick = { navController.navigate(Route.Stats) }) { Text("Stats") }
             Button(onClick = { navController.navigate(Route.HomeScreen) }) { Text("Home") }
         }
         //All The Items In The Store

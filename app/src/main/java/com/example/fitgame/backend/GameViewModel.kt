@@ -65,8 +65,8 @@ class GameViewModel(private val healthDataManager: HealthDataManager) : ViewMode
 
     private fun calculateRewards(metrics: HealthDataMetrics) {
 
-        val coinReward = (metrics.steps / 1000).toInt() * 10
-        val tokenRewardFromSleep = metrics.sleepSessions
+        val coinReward = (metrics.steps / 100).toInt() * 10
+        val tokenRewardFromSleep = _hoursSleep.value
         val distanceInMiles = metrics.distance / 1609.34
         val tokenRewardFromMiles = distanceInMiles.toInt()
         val totalTokenReward = tokenRewardFromSleep + tokenRewardFromMiles
