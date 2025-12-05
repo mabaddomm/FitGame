@@ -53,7 +53,7 @@ fun Stats(navController: NavController, viewModel: GameViewModel) {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Button(onClick = { navController.popBackStack() }) { Text("Back") }
+            Button(onClick = { navController.navigate(Route.MainScreen) }) { Text("Village") }
             Button(onClick = { navController.navigate(Route.Shop) }) { Text("Shop") }
             Button(onClick = { navController.navigate(Route.HomeScreen) }) { Text("Home") }
         }

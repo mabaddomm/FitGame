@@ -51,8 +51,9 @@ fun Shop(modifier: Modifier = Modifier, navController: NavController, viewModel:
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Button(onClick = {navController.popBackStack()}) { Text("Back") }
-            Button(onClick = {navController.navigate(Route.Stats)}) { Text("Stats") }
+            Button(onClick = { navController.navigate(Route.MainScreen) }) { Text("Village") }
+            Button(onClick = { navController.navigate(Route.Shop) }) { Text("Shop") }
+            Button(onClick = { navController.navigate(Route.HomeScreen) }) { Text("Home") }
         }
         //All The Items In The Store
         LazyColumn(modifier = Modifier.fillMaxWidth().padding(8.dp))

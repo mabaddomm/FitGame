@@ -173,12 +173,10 @@ fun MainScreen(
                 .padding(30.dp),
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
-            Button(onClick = { navController.navigate(Route.Stats) }) {
-                Text("Game Stats")
-            }
-            Button(onClick = { navController.navigate(Route.Shop) }) {
-                Text("Game Shop")
-            }
+            Button(onClick = { navController.navigate(Route.Stats) }) { Text("Stats") }
+            Button(onClick = { navController.navigate(Route.Shop) }) { Text("Shop") }
+            Button(onClick = { navController.navigate(Route.HomeScreen) }) { Text("Home") }
+
         }
     }
 }
