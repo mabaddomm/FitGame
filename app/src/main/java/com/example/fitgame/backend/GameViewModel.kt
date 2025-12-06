@@ -157,32 +157,31 @@ class GameViewModel(private val healthDataManager: HealthDataManager) : ViewMode
             Log.d("GameViewModel", "Item ${itemToPlace.name} (ID $instanceId) placed at ($row, $col).")
         }
     }
-        val itemsInShop = listOf(
-            ShopItem("1", "Trees (Grass Terrain)", R.drawable.g_extra_trees, cost = 0, buildTime = 0, description = "Adds extra trees to grass terrain."),
-            ShopItem("2", "Rock + Tree (Grass Terrain)", R.drawable.g_rock_tree, cost = 0, buildTime = 0, description = "Places a rock and tree on grass terrain."),
-            ShopItem("3", "Trees (Dirt Terrain)", R.drawable.d_tree, cost = 0, buildTime = 0, description = "Adds trees to dirt terrain."),
-            ShopItem("4", "Rocks (Dirt Terrain)", R.drawable.d_rock, cost = 0, buildTime = 0, description = "Places rocks on dirt terrain."),
-            ShopItem("5", "Rock + Tree (Dirt Terrain)", R.drawable.d_rock_tree, cost = 0, buildTime = 0, description = "Places rocks and trees on dirt terrain."),
-            ShopItem("6", "Cactus (Sand Terrain)", R.drawable.s_cactus, cost = 0, buildTime = 0, description = "Adds cactus to sand terrain."),
-            ShopItem("7", "Rocks (Sand Terrain)", R.drawable.s_rock, cost = 0, buildTime = 0, description = "Places rocks on sand terrain."),
-            ShopItem("8", "Rocks + Cactus (Sand Terrain)", R.drawable.s_rock_cactus, cost = 0, buildTime = 0, description = "Places rocks and cactus on sand terrain."),
-            ShopItem("9", "Medieval Blacksmith", R.drawable.medieval_blacksmith, cost = 20, buildTime = 0, description = "A Building To Make Weapons If you want the old style."),
-            ShopItem("10", "Medieval Cabin", R.drawable.medieval_cabin, cost = 20, buildTime = 0, description = "A simple wooden cabin make fun memories here."),
-            ShopItem("11", "Medieval Farm", R.drawable.medieval_farm, cost = 20, buildTime = 0, description = "A Small Simple Farm, but still good for food"),
-            ShopItem("12", "Medieval House", R.drawable.medieval_house, cost = 35, buildTime = 0, description = "A Home with the Old Medieval Style If that is your thing."),
-            ShopItem("13", "Medieval Tower", R.drawable.medieval_tower, cost = 10, buildTime = 0, description = "A Tower, who knows that it does tho"),
-            ShopItem("14", "Medieval Windmill", R.drawable.medieval_windmill, cost = 10, buildTime = 0, description = "This is Just a wind mill nothing special :("),
-            ShopItem("15", "Western Bank", R.drawable.western_bank, cost = 35, buildTime = 0, description = "A Western Style Sandy bank."),
-            ShopItem("16", "Western General Store", R.drawable.western_general, cost = 35, buildTime = 0, description = "A store for goods and supplies in the Dessert."),
-            ShopItem("17", "Western Saloon", R.drawable.western_saloon, cost = 20, buildTime = 0, description = "A western bar takin place in the Nice Dessert."),
-            ShopItem("18", "Western Sheriff Office", R.drawable.western_sheriff, cost = 40, buildTime = 0, description = "The Sherif Office for the West."),
-            ShopItem("19", "Western Train Station", R.drawable.western_station, cost = 40, buildTime = 0, description = "Train Station essential for Dessert Travel"),
-            ShopItem("20", "Mill Cutter", R.drawable.mill_cutter, cost = 25, buildTime = 0, description = "Mill Cutter, to help make wood for the village."),
-            ShopItem("21", "Mill Factory", R.drawable.mill_factory, cost = 30, buildTime = 0, description = "Could be a mill Factory Could be a Factory for Other Things ?!?! ."),
-            ShopItem("22", "Mill Storage", R.drawable.mill_storage, cost = 35, buildTime = 0, description = "Storage building Just to keep your Stuff."),
-            ShopItem("23", "Mill Warehouse", R.drawable.mill_warehouse, cost = 20, buildTime = 0, description = "Ware house Good for Work.")
-        )
-    }
-
+    val itemsInShop = listOf(
+        ShopItem("1", "Trees (Grass Terrain)", R.drawable.g_extra_trees, cost = 0, buildTime = 0, description = "Adds extra trees to grass terrain."),
+        ShopItem("2", "Rock + Tree (Grass Terrain)", R.drawable.g_rock_tree, cost = 0, buildTime = 0, description = "Places a rock and tree on grass terrain."),
+        ShopItem("3", "Trees (Dirt Terrain)", R.drawable.d_tree, cost = 0, buildTime = 0, description = "Adds trees to dirt terrain."),
+        ShopItem("4", "Rocks (Dirt Terrain)", R.drawable.d_rock, cost = 0, buildTime = 0, description = "Places rocks on dirt terrain."),
+        ShopItem("5", "Rock + Tree (Dirt Terrain)", R.drawable.d_rock_tree, cost = 0, buildTime = 0, description = "Places rocks and trees on dirt terrain."),
+        ShopItem("6", "Cactus (Sand Terrain)", R.drawable.s_cactus, cost = 0, buildTime = 0, description = "Adds cactus to sand terrain."),
+        ShopItem("7", "Rocks (Sand Terrain)", R.drawable.s_rock, cost = 0, buildTime = 0, description = "Places rocks on sand terrain."),
+        ShopItem("8", "Rocks + Cactus (Sand Terrain)", R.drawable.s_rock_cactus, cost = 0, buildTime = 0, description = "Places rocks and cactus on sand terrain."),
+        ShopItem("9", "Medieval Blacksmith", R.drawable.medieval_blacksmith, cost = 20, buildTime = 0, description = "A Building To Make Weapons If you want the old style."),
+        ShopItem("10", "Medieval Cabin", R.drawable.medieval_cabin, cost = 20, buildTime = 0, description = "A simple wooden cabin make fun memories here."),
+        ShopItem("11", "Medieval Farm", R.drawable.medieval_farm, cost = 20, buildTime = 0, description = "A Small Simple Farm, but still good for food"),
+        ShopItem("12", "Medieval House", R.drawable.medieval_house, cost = 35, buildTime = 0, description = "A Home with the Old Medieval Style If that is your thing."),
+        ShopItem("13", "Medieval Tower", R.drawable.medieval_tower, cost = 10, buildTime = 0, description = "A Tower, who knows that it does tho"),
+        ShopItem("14", "Medieval Windmill", R.drawable.medieval_windmill, cost = 10, buildTime = 0, description = "This is Just a wind mill nothing special :("),
+        ShopItem("15", "Western Bank", R.drawable.western_bank, cost = 35, buildTime = 0, description = "A Western Style Sandy bank."),
+        ShopItem("16", "Western General Store", R.drawable.western_general, cost = 35, buildTime = 0, description = "A store for goods and supplies in the Dessert."),
+        ShopItem("17", "Western Saloon", R.drawable.western_saloon, cost = 20, buildTime = 0, description = "A western bar takin place in the Nice Dessert."),
+        ShopItem("18", "Western Sheriff Office", R.drawable.western_sheriff, cost = 40, buildTime = 0, description = "The Sherif Office for the West."),
+        ShopItem("19", "Western Train Station", R.drawable.western_station, cost = 40, buildTime = 0, description = "Train Station essential for Dessert Travel"),
+        ShopItem("20", "Mill Cutter", R.drawable.mill_cutter, cost = 25, buildTime = 0, description = "Mill Cutter, to help make wood for the village."),
+        ShopItem("21", "Mill Factory", R.drawable.mill_factory, cost = 30, buildTime = 0, description = "Could be a mill Factory Could be a Factory for Other Things ?!?! ."),
+        ShopItem("22", "Mill Storage", R.drawable.mill_storage, cost = 35, buildTime = 0, description = "Storage building Just to keep your Stuff."),
+        ShopItem("23", "Mill Warehouse", R.drawable.mill_warehouse, cost = 20, buildTime = 0, description = "Ware house Good for Work.")
+    )
+}
 
 
