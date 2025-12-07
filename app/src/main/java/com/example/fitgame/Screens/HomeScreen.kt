@@ -22,6 +22,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -33,6 +34,7 @@ import androidx.navigation.NavController
 import com.example.fitgame.R
 import com.example.fitgame.backend.GameViewModel
 import com.example.fitgame.backend.Route
+import com.example.fitgame.backend.launchGoogleFit
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier, navController: NavController, viewModel: GameViewModel, onConnectHealthClick: () -> Unit)
@@ -40,6 +42,7 @@ fun HomeScreen(modifier: Modifier = Modifier, navController: NavController, view
     val coins by viewModel.coins.collectAsState()
     val tokens by viewModel.tokens.collectAsState()
     val isConnected = coins > 0 || tokens > 0
+    val context = LocalContext.current
 
     Column(
         modifier = Modifier
@@ -95,6 +98,11 @@ fun HomeScreen(modifier: Modifier = Modifier, navController: NavController, view
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            Button(
+                onClick = { launchGoogleFit(context)},
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Red),
+                modifier = Modifier.fillMaxWidth().height(60.dp)
+            ) {Text("Connect Google Fit First")}
 
             Button(
                 onClick = onConnectHealthClick,

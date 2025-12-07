@@ -1,6 +1,11 @@
 package com.example.fitgame.backend
 
+import android.content.Context
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.fitgame.R
@@ -184,4 +189,39 @@ class GameViewModel(private val healthDataManager: HealthDataManager) : ViewMode
     )
 }
 
+fun launchGoogleFit(context: Context) {
+    val googleFitPackage = "com.google.android.apps.fitness"
+
+    try {
+        context.packageManager.getPackageInfo(googleFitPackage, 0)
+        val launchIntent = context.packageManager.getLaunchIntentForPackage(googleFitPackage)
+        if (launchIntent != null) {
+            context.startActivity(launchIntent)
+            Toast.makeText(context, "Opening Google Fit", Toast.LENGTH_SHORT).show()
+        } else {
+            launchPlayStore(context, googleFitPackage)
+        }
+    } catch (e: PackageManager.NameNotFoundException) {
+        Toast.makeText(context, "Google Fit not installed. Opening Play Store", Toast.LENGTH_LONG).show()
+        launchPlayStore(context, googleFitPackage)
+    }
+}
+
+private fun launchPlayStore(context: Context, packageName: String) {
+    try {
+        context.startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("market://details?id=$packageName")
+            )
+        )
+    } catch (e: android.content.ActivityNotFoundException) {
+        context.startActivity(
+            Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+            )
+        )
+    }
+}
 
